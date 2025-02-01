@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2xw8l4xjeu2l"]
+
+[ext_resource type="Script" path="res://player/player_3d.gd" id="1_3m6lm"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://player/sophia_skin/sophia_skin.tscn" id="1_80p6d"]
+[ext_resource type="AudioStream" uid="uid://bhoyegbjust84" path="res://player/sounds/robot_land.wav" id="3_7qvdq"]
+[ext_resource type="AudioStream" uid="uid://b4x0f4pgfifoo" path="res://player/sounds/robot_jump.wav" id="4_rcwqi"]
+[ext_resource type="Material" uid="uid://cg2ujwpv73ha0" path="res://level/interactable/flag/waving_flag_material.tres" id="5_jwi3v"]
+[ext_resource type="AudioStream" uid="uid://joxl3kh67l1r" path="res://player/sounds/robot_step_01.wav" id="5_vulvi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dlnvx"]
+radius = 0.243613
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d0xqx"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjdu1"]
+scale_min = 0.5
+scale_max = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_tskfk"]
+material = ExtResource("5_jwi3v")
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Player3D" type="CharacterBody3D"]
+script = ExtResource("1_3m6lm")
+
+[node name="SophiaSkin" parent="." instance=ExtResource("1_80p6d")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dlnvx")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.950895, -0.309515, 0, 0.309515, 0.950895, 0, 1.15902, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_d0xqx")
+spring_length = 8.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+
+[node name="LandingSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_7qvdq")
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_rcwqi")
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_vulvi")
+
+[node name="DustParticles" type="GPUParticles3D" parent="."]
+unique_name_in_owner = true
+process_material = SubResource("ParticleProcessMaterial_vjdu1")
+draw_pass_1 = SubResource("BoxMesh_tskfk")
