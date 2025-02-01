@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://csu00gnbjw0qw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlieo"]
+albedo_color = Color(0.404768, 0.989975, 0.896917, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gsfw7"]
+material = SubResource("StandardMaterial3D_tlieo")
+radius = 0.1
+height = 0.2
+radial_segments = 66
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63yda"]
+albedo_color = Color(0.970733, 0.388444, 0.595765, 1)
+emission_enabled = true
+emission = Color(0.239543, 0.541995, 1, 1)
+emission_energy_multiplier = 19.85
+grow_amount = 1.798
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xkkc0"]
+radius = 0.105039
+
+[node name="LightParticle" type="Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.4242, 0, 0, 0, 1.73806, 0, 0, 0, 2.01986, 0, 0, 0)
+mesh = SubResource("SphereMesh_gsfw7")
+surface_material_override/0 = SubResource("StandardMaterial3D_63yda")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.05039, 0, 0, 0, 1.05039, 0, 0, 0, 1.05039, 0.00169149, 0, -0.00117978)
+shape = SubResource("SphereShape3D_xkkc0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.153572, 1, 0.974012, 1)
+light_energy = 7.4
+light_indirect_energy = 1.115
+shadow_enabled = true
