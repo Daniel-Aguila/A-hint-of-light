@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvdpjdmdqwqsv"]
 
 [ext_resource type="Script" path="res://scripts/control.gd" id="1_de5v4"]
-[ext_resource type="Texture2D" uid="uid://b7semten6m8aj" path="res://assets/pixil-frame-0.png" id="2_0tcli"]
+[ext_resource type="Texture2D" uid="uid://c7o4si4iicnsd" path="res://assets/pixil-frame-0.png" id="2_0tcli"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pyjlk"]
 blend_mode = 1
