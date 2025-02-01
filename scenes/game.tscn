@@ -1,17 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl7t5lcemsqvr"]
+[gd_scene load_steps=4 format=3 uid="uid://dl7t5lcemsqvr"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_1il7v"]
-[ext_resource type="PackedScene" uid="uid://b1ot6gn6tms6h" path="res://lesson_reference/player_3d_template.tscn" id="1_w0p8v"]
-[ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="7_2frud"]
-[ext_resource type="PackedScene" uid="uid://bxg6oejpaitdt" path="res://level/interactable/flag/flag_reached_screen.tscn" id="19_cpgj4"]
+[ext_resource type="Script" path="res://scripts/mesh_instance_3d.gd" id="1_fm217"]
 
-[node name="Game" type="Node"]
-script = ExtResource("1_1il7v")
+[sub_resource type="PlaneMesh" id="PlaneMesh_08r7s"]
+size = Vector2(50, 50)
 
-[node name="Player3DTemplate" parent="." instance=ExtResource("1_w0p8v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43638, 0, -7.8513)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82jai"]
+albedo_color = Color(0, 0, 0, 1)
 
-[node name="FlagReachedScreen" parent="." instance=ExtResource("19_cpgj4")]
+[node name="Game" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175659, 0.208807, -0.0441284)
 
-[node name="Level" parent="." instance=ExtResource("7_2frud")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.4)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0443993, -0.15033, 0.0772629)
+mesh = SubResource("PlaneMesh_08r7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_82jai")
+script = ExtResource("1_fm217")
