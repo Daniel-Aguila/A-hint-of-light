@@ -1,0 +1,16 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://djohwgi4c7mce"]
+
+[ext_resource type="AudioStream" uid="uid://joxl3kh67l1r" path="res://player/sounds/robot_step_01.wav" id="1_65bse"]
+[ext_resource type="AudioStream" uid="uid://dmcy81a5m2yq" path="res://player/sounds/robot_step_02.wav" id="2_kv7tv"]
+[ext_resource type="AudioStream" uid="uid://ccojt633qlqvh" path="res://player/sounds/robot_step_03.wav" id="3_abgbx"]
+[ext_resource type="AudioStream" uid="uid://bj3fk8qb5ler2" path="res://player/sounds/robot_step_04.wav" id="4_uydlg"]
+[ext_resource type="AudioStream" uid="uid://rru4ud18h3os" path="res://player/sounds/robot_step_05.wav" id="5_dbqrh"]
+
+[resource]
+playback_mode = 1
+streams_count = 5
+stream_0/stream = ExtResource("1_65bse")
+stream_1/stream = ExtResource("2_kv7tv")
+stream_2/stream = ExtResource("3_abgbx")
+stream_3/stream = ExtResource("4_uydlg")
+stream_4/stream = ExtResource("5_dbqrh")
