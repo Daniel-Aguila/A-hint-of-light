@@ -11,17 +11,19 @@
 [node name="Player3D" parent="." instance=ExtResource("2_n1sis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11877, 0, -37.7669)
 
-[node name="LightParticle" parent="." instance=ExtResource("3_xxg1n")]
+[node name="LightParticles" type="Node3D" parent="."]
+
+[node name="LightParticle" parent="LightParticles" instance=ExtResource("3_xxg1n")]
 transform = Transform3D(0.999637, 0, 0.0269272, 0, 1, 0, -0.0269272, 0, 0.999637, 4.8931, 2.38165, -28.4622)
 
-[node name="LightParticle2" parent="." instance=ExtResource("3_xxg1n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9513, 7.40305, -20.7004)
+[node name="LightParticle2" parent="LightParticles" instance=ExtResource("3_xxg1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9513, 8.11405, -20.7004)
 
-[node name="LightParticle3" parent="." instance=ExtResource("3_xxg1n")]
+[node name="LightParticle3" parent="LightParticles" instance=ExtResource("3_xxg1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9519, 8.36138, -20.0504)
 
-[node name="LightParticle4" parent="." instance=ExtResource("3_xxg1n")]
+[node name="LightParticle4" parent="LightParticles" instance=ExtResource("3_xxg1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1576, 8.29027, -19.9842)
 
-[node name="LightParticle5" parent="." instance=ExtResource("3_xxg1n")]
+[node name="LightParticle5" parent="LightParticles" instance=ExtResource("3_xxg1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5122, 10.3187, -19.301)
