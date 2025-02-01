@@ -1,8 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvdpjdmdqwqsv"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_de5v4"]
-[ext_resource type="Texture2D" uid="uid://c7o4si4iicnsd" path="res://pixil-frame-0.png" id="2_0tcli"]
-[ext_resource type="Script" path="res://Quit.cs" id="3_vomp2"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_de5v4"]
+[ext_resource type="Texture2D" uid="uid://b7semten6m8aj" path="res://assets/pixil-frame-0.png" id="2_0tcli"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pyjlk"]
 blend_mode = 1
@@ -14,6 +13,24 @@ bg_color = Color(8.66354e-06, 0.654706, 0.871156, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7rfx"]
 bg_color = Color(0.999523, 0.186599, 0.753614, 1)
+
+[sub_resource type="CSharpScript" id="CSharpScript_a2hyv"]
+script/source = "using Godot;
+using System;
+
+public partial class Quit : Button
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -52,7 +69,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_j7rfx")
 text = "Quit
 "
-script = ExtResource("3_vomp2")
+script = SubResource("CSharpScript_a2hyv")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
