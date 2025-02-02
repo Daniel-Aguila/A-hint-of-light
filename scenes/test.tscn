@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://tacrrc7d868"]
+[gd_scene load_steps=5 format=3 uid="uid://bjd52cyvnc18"]
 
 [ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="1_trc12"]
+[ext_resource type="PackedScene" uid="uid://bdv4rq4uxpa1p" path="res://interface/Interface.tscn" id="1_u1tgt"]
 [ext_resource type="PackedScene" uid="uid://d2xw8l4xjeu2l" path="res://player/player_3d.tscn" id="2_n1sis"]
 [ext_resource type="PackedScene" uid="uid://csu00gnbjw0qw" path="res://prefab/light_particle.tscn" id="3_xxg1n"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Interface" parent="." instance=ExtResource("1_u1tgt")]
 
 [node name="Level" parent="." instance=ExtResource("1_trc12")]
 
