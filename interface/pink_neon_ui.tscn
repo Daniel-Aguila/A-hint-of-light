@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtuhctivkcidd"]
+
+[ext_resource type="Texture2D" uid="uid://bvqvfx2rgg6k4" path="res://interface/PixelNeonUI/Menu_Pink/Menu_ui_pink_base.png" id="1_ettax"]
+
+[node name="Pink Neon UI" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_ettax")
