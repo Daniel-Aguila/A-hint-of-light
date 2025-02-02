@@ -8,6 +8,7 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="Interface" parent="." instance=ExtResource("1_u1tgt")]
+mouse_filter = 2
 
 [node name="Level" parent="." instance=ExtResource("1_trc12")]
 
