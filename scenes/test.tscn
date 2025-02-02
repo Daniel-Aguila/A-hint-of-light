@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjd52cyvnc18"]
+[gd_scene load_steps=6 format=3 uid="uid://bjd52cyvnc18"]
 
 [ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="1_trc12"]
 [ext_resource type="PackedScene" uid="uid://bdv4rq4uxpa1p" path="res://interface/Interface.tscn" id="1_u1tgt"]
 [ext_resource type="PackedScene" uid="uid://d2xw8l4xjeu2l" path="res://player/player_3d.tscn" id="2_n1sis"]
 [ext_resource type="PackedScene" uid="uid://csu00gnbjw0qw" path="res://prefab/LightParticle/light_particle.tscn" id="3_xxg1n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8kgcy"]
+radius = 0.0671004
 
 [node name="Node3D" type="Node3D"]
 
@@ -11,6 +14,7 @@
 mouse_filter = 2
 
 [node name="Level" parent="." instance=ExtResource("1_trc12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0152245, -0.0570354, -0.0672379)
 
 [node name="Player3D" parent="." instance=ExtResource("2_n1sis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11877, 0, -37.7669)
@@ -20,8 +24,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11877, 0, -37.7669)
 [node name="LightParticle" parent="." instance=ExtResource("3_xxg1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76347, 2.30332, -28.8843)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightParticle"]
+transform = Transform3D(3.00984, 0, 0, 0, 3.00984, 0, 0, 0, 3.00984, 0, 0, 0)
+shape = SubResource("SphereShape3D_8kgcy")
+
 [node name="LightParticle2" parent="." instance=ExtResource("3_xxg1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.966, 8.3879, -20.1929)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightParticle2"]
+transform = Transform3D(3.00984, 0, 0, 0, 3.00984, 0, 0, 0, 3.00984, 0, 0, 0)
+shape = SubResource("SphereShape3D_8kgcy")
+
 [node name="LightParticle3" parent="." instance=ExtResource("3_xxg1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5133, 8.34821, -20.2419)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightParticle3"]
+transform = Transform3D(3.00984, 0, 0, 0, 3.00984, 0, 0, 0, 3.00984, 0, 0, 0)
+shape = SubResource("SphereShape3D_8kgcy")
