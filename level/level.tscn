@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnedxfn2pxh2t"]
+[gd_scene load_steps=22 format=3 uid="uid://cnedxfn2pxh2t"]
 
 [ext_resource type="Shader" uid="uid://cdlt3ujrpad32" path="res://level/sky_with_stars.tres" id="1_hwp5q"]
 [ext_resource type="PackedScene" uid="uid://7s1esfbldf1" path="res://level/cactus/cactus_small_4.tscn" id="1_oaaa3"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cip1awte2184j" path="res://level/cactus/cactus_small_2.tscn" id="6_ona4a"]
 [ext_resource type="Material" uid="uid://da188d7yrcfr8" path="res://level/platforms.tres" id="7_njuj4"]
 [ext_resource type="PackedScene" uid="uid://c6uew1wfpkt16" path="res://level/interactable/flag/flag_3d.tscn" id="8_kebk2"]
+[ext_resource type="PackedScene" uid="uid://cv8456p8cddwe" path="res://models/Early Skyscraper.glb" id="12_dvbcf"]
+[ext_resource type="PackedScene" uid="uid://daiwmiud4nx1v" path="res://models/Tree with Falling Leaves.glb" id="13_t456w"]
 
 [sub_resource type="Curve" id="Curve_k4wis"]
 _data = [Vector2(0.331719, 0.0391753), 0.0, 0.0, 0, 0, Vector2(0.697336, 1), 0.51276, 0.0, 0, 0]
@@ -38,8 +40,8 @@ noise = SubResource("FastNoiseLite_jnnrx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8ud2"]
 shader = ExtResource("1_hwp5q")
-shader_parameter/top_color = Color(0.288469, 0.182916, 1, 1)
-shader_parameter/bottom_color = Color(1, 0.46805, 0, 1)
+shader_parameter/top_color = Color(0.205105, 2.98411e-05, 0.782915, 1)
+shader_parameter/bottom_color = Color(0.04, 0, 0.1, 1)
 shader_parameter/moon_direction = Vector3(-1.095, 0.68, 1)
 shader_parameter/moon_size = 0.045
 shader_parameter/gradient_curve = SubResource("CurveTexture_moxc7")
@@ -69,25 +71,38 @@ glow_hdr_threshold = 0.26
 glow_hdr_scale = 0.0
 glow_hdr_luminance_cap = 18.75
 glow_map_strength = 1.0
+fog_enabled = true
+fog_mode = 1
 fog_light_color = Color(0.843137, 0.737255, 0.329412, 1)
-fog_density = 0.0
-fog_aerial_perspective = 1.0
+fog_sun_scatter = 9.35
+fog_density = 1.0
+fog_aerial_perspective = 0.935
 fog_sky_affect = 0.0
 fog_height_density = 0.1
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
-volumetric_fog_albedo = Color(0.843137, 0.737255, 0.329412, 1)
-volumetric_fog_emission = Color(0.843137, 0.737255, 0.329412, 1)
+volumetric_fog_albedo = Color(0.3, 0.2634, 0.117, 1)
+volumetric_fog_emission = Color(0.35, 0.3052, 0.126, 1)
 
 [node name="Level" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5pwhg")
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.648319, -0.761369, 0, 0.761369, 0.648319, -12.2725, 40.9482, -51.8834)
+light_color = Color(0.2288, 0.380747, 0.88, 1)
+light_energy = 0.029
+light_angular_distance = 83.5
+shadow_enabled = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.327016, 0.941731, -0.0787648, 0.688764, 0.294578, 0.662441, 0.647044, 0.162378, -0.744962, -47.2295, 26.8832, -28.0205)
+light_color = Color(0.671685, 0.300584, 0.680076, 1)
 light_energy = 0.53
 shadow_enabled = true
 directional_shadow_max_distance = 40.0
+sky_mode = 1
 
 [node name="KillPlane" parent="." instance=ExtResource("3_1g472")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -55.25, -17.7152, -20)
@@ -233,3 +248,27 @@ use_collision = true
 polygon = PackedVector2Array(0, 0, 3, 2, 3, 0)
 depth = 4.0
 material = ExtResource("7_njuj4")
+
+[node name="Early Skyscraper" parent="." instance=ExtResource("12_dvbcf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.1635, -16.4104, -11.6531)
+
+[node name="Early Skyscraper2" parent="." instance=ExtResource("12_dvbcf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.9159, -1.73308, -11.6531)
+
+[node name="Early Skyscraper3" parent="." instance=ExtResource("12_dvbcf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50.9111, -11.5013, -11.6531)
+
+[node name="Early Skyscraper4" parent="." instance=ExtResource("12_dvbcf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.6359, -24.024, -28.6052)
+
+[node name="Early Skyscraper5" parent="." instance=ExtResource("12_dvbcf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -35.3883, -9.34659, -28.6052)
+
+[node name="Early Skyscraper6" parent="." instance=ExtResource("12_dvbcf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -54.3835, -19.1148, -28.6052)
+
+[node name="Tree with Falling Leaves" parent="." instance=ExtResource("13_t456w")]
+transform = Transform3D(45.2469, 0, 0, 0, 45.2469, 0, 0, 0, 45.2469, 3.04487, 3.98377, -17.4573)
+
+[node name="Tree with Falling Leaves2" parent="." instance=ExtResource("13_t456w")]
+transform = Transform3D(12.8099, 0, 43.3957, 0, 45.2469, 0, -43.3957, 0, 12.8099, 9.02526, 4.59059, -33.4388)
