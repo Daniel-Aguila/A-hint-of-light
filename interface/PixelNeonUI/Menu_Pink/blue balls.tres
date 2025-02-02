@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d2mr3xrh2d2ka"]
+
+[ext_resource type="Texture2D" uid="uid://ce7aduyrmhpe" path="res://interface/PixelNeonUI/Menu_Pink/GlowingBall Blue 22frames RPG.png" id="1_m1lv7"]
+
+[resource]
+atlas = ExtResource("1_m1lv7")
+region = Rect2(39, 41, 116, 116)

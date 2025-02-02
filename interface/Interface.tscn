@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdv4rq4uxpa1p"]
+[gd_scene load_steps=4 format=3 uid="uid://bdv4rq4uxpa1p"]
 
 [ext_resource type="Theme" uid="uid://c0qr05qjr8pu4" path="res://interface/PixelNeonUI/Menu_Pink/PixelNeonPinkTheme.tres" id="1_upcub"]
+[ext_resource type="Texture2D" uid="uid://d2mr3xrh2d2ka" path="res://interface/PixelNeonUI/Menu_Pink/blue balls.tres" id="2_vlegf"]
+
+[sub_resource type="Theme" id="Theme_yyqci"]
 
 [node name="Interface" type="Control"]
 texture_filter = 1
@@ -12,8 +15,50 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_upcub")
 
-[node name="Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 188.0
-offset_bottom = 180.0
-text = "sfvcdvvvvvvvvvvvvvvvvvvv"
+offset_left = 20.0
+offset_top = 24.0
+offset_right = 189.0
+offset_bottom = 38.0
+text = "'E' to interact
+'WASD' to move
+'Space' to jump
+"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -209.0
+offset_top = 21.0
+offset_right = -14.0
+offset_bottom = 67.0
+grow_horizontal = 0
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -17.5
+offset_right = 83.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yyqci")
+theme_override_constants/separation = 12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/BoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("2_vlegf")
+
+[node name="Label2" type="Label" parent="Panel/BoxContainer"]
+layout_mode = 2
+text = "NUM_OF_STARS"

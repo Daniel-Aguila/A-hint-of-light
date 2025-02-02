@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://c0qr05qjr8pu4"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://c0qr05qjr8pu4"]
 
 [ext_resource type="StyleBox" uid="uid://ddhjc2ofb3trt" path="res://interface/PixelNeonUI/Menu_Pink/button.tres" id="1_0du0w"]
 [ext_resource type="StyleBox" uid="uid://023fhvy2v2xb" path="res://interface/PixelNeonUI/Menu_Pink/progress.tres" id="2_5sahb"]
@@ -20,6 +20,9 @@ data = {
 
 [sub_resource type="ImageTexture" id="ImageTexture_8taci"]
 image = SubResource("Image_bvor7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk0nv"]
+bg_color = Color(0.768627, 0.501961, 0.670588, 0.494118)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wd7f3"]
 texture = ExtResource("4_57i6b")
@@ -73,7 +76,6 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
-Button/styles/disabled = ExtResource("1_0du0w")
 Button/styles/focus = ExtResource("1_0du0w")
 Button/styles/hover = ExtResource("1_0du0w")
 Button/styles/normal = ExtResource("1_0du0w")
@@ -102,6 +104,7 @@ LineEdit/icons/clear = SubResource("ImageTexture_8taci")
 LineEdit/styles/focus = ExtResource("3_6xt1f")
 LineEdit/styles/normal = ExtResource("3_6xt1f")
 LineEdit/styles/read_only = ExtResource("3_6xt1f")
+Panel/styles/panel = SubResource("StyleBoxFlat_hk0nv")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_wd7f3")
 ProgressBar/styles/background = ExtResource("2_5sahb")
 TextEdit/colors/background_color = Color(0, 0, 0, 0)
